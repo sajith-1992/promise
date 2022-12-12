@@ -1,32 +1,21 @@
-function add(num1,num2,callback){
-    let err=false
+
+function add (num1,num2,callback){
+    var err=false;
     if(num1==0){
-        err==true
+        err=true
     }
-callback(num1+num2,err)
+    callback(num1+num2,err)
 }
-
-function multiply(num1,num2,callback){
-    callback(num1*num2)
+    
+add(6,10,(sum,err)=>{
+if(err)
+{
+    console.log("firstnumber is zero")
 }
-function div(num1,num2,callback){
-    callback(num1/num2)
-}
-
-
-
-add(0,5,(sum,err)=>{ 
-     if(err){
-    console.log ("number is zero")
-}else{
+else{
     console.log(sum)
-    multiply(sum,sum,(product)=>{
+}
+})
 
-        console.log(product)
-        div(product,5,(result)=>{console.log(result)})
-    
-    })}
-       
-    })
 
-    
+
