@@ -1,21 +1,17 @@
+const  promise = require('promise')
 
-function add (num1,num2,callback){
-    var err=false;
-    if(num1==0){
-        err=true
-    }
-    callback(num1+num2,err)
+
+function add(num1,num2){
+    return new promise((resolve,reject)=>{
+        
+        if(num1==0){
+        reject("first number is zero")    
+        }
+        resolve(num1+num2)
+    })
 }
-    
-add(6,10,(sum,err)=>{
-if(err)
-{
-    console.log("firstnumber is zero")
-}
-else{
-    console.log(sum)
-}
-})
 
-
-
+add(0,20).then((sum)=>{
+  console.log(sum)  
+}).catch((err)=>{
+        console.log(err)})
