@@ -9,20 +9,24 @@ callback(num1+num2,err)
 function multiply(num1,num2,callback){
     callback(num1*num2)
 }
-function
+function div(num1,num2,callback){
+    callback(num1/num2)
+}
 
 
-add(5,30,(sum,err)=>{ 
+
+add(0,5,(sum,err)=>{ 
      if(err){
     console.log ("number is zero")
 }else{
     console.log(sum)
     multiply(sum,sum,(product)=>{
+
         console.log(product)
-
-    })
+        div(product,5,(result)=>{console.log(result)})
     
-}
-})
+    })}
+       
+    })
 
-
+    
