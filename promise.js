@@ -21,6 +21,13 @@ function mobileNum(){
 
 
     //to call this we need to use promise 
-    promise.all([firstName(),mobileNum()]).then ((result)=>{
+   /* promise.all([firstName(),mobileNum()]).then ((result)=>{
         console.log(result)
-    })
+    })*/
+    
+   async function call(){
+        let name =await firstName()
+        console.log(name)
+
+    }
+    call()
